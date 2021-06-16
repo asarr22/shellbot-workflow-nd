@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 env:
-  GitHubMail: "batuhanarslanoglu4@gmail.com"
-  GitHubName: "Batu33TR"
+  GitHubMail: "msarr3334@gmail.com"
+  GitHubName: "asarr22"
   # GH_TOKEN >> Github Personal Access Token << In Repository Secrets
   # authToken >> Telegram Bot Token << In Repository Secrets
   # ownerID >> Telegram User/Admin owner ID << In Repository Secrets
@@ -35,7 +35,7 @@ jobs:
 
      - name: Install GPG key
        run: |
-          git clone https://github.com/Batu33TR/gnupg ~/gpgkey
+          git clone https://github.com/asarr22/gnupg ~/gpgkey
           gpg --import ~/gpgkey/gpgsecret.asc
           rm -rf ~/gpgkey
           echo "export GPG_TTY=$(tty)" >> ~/.bash_profile
