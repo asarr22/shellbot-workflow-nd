@@ -74,3 +74,11 @@ jobs:
           cd shell-bot
           export PATH="/home/runner:$PATH"
           node server
+     - name: Workflow Looping
+       run: |
+          git clone https://github.com/${GITHUB_REPOSITORY} loop
+          cd loop || exit 1
+          echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt
+          git add looper.txt
+          git commit -m "Looping at $(date -u +%D-%T%P)"
+          git push -q https://github.com/${GITHUB_REPOSITORY} HEAD:main
